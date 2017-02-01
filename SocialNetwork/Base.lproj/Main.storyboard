@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="150" id="wqR-dy-IVG"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgp-be-HOc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgp-be-HOc" customClass="CustomView" customModule="SocialNetwork" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="493" width="320" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk4-XR-roT">
@@ -80,7 +80,7 @@
                                                 <rect key="frame" x="0.0" y="34" width="248" height="24"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvq-3J-TIE" customClass="CustomButton" customModule="SocialNetwork" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="68" width="248" height="40"/>
@@ -92,6 +92,9 @@
                                                 <state key="normal" title="Sign in">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.87176262842465757" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vmm-Ka-u9p"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -106,6 +109,9 @@
                                                     <constraint firstAttribute="width" constant="100" id="wyh-6Z-QlZ"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="f"/>
+                                                <connections>
+                                                    <action selector="facebookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mAf-FC-wPQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -133,6 +139,10 @@
                             <constraint firstItem="c3C-mz-0je" firstAttribute="top" secondItem="XME-U7-eIi" secondAttribute="bottom" constant="20" id="wyC-Tv-Xh8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="qWT-NX-W7g" id="Svo-qO-AFZ"/>
+                        <outlet property="passwordField" destination="xpf-ja-dZP" id="EkC-tk-eLU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
