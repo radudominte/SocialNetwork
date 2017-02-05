@@ -1,14 +1,14 @@
 //
-//  CustomView.swift
+//  CircleView.swift
 //  SocialNetwork
 //
-//  Created by Radu Dominte on 29/01/17.
+//  Created by Radu Dominte on 05/02/17.
 //  Copyright © 2017 Radu Dominte. All rights reserved.
 //
 
 import UIKit
 
-class CustomView: UIView {
+class CircleView: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +17,14 @@ class CustomView: UIView {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        layer.cornerRadius = 2.0
+    }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = self.frame.width / 2
+        
     }
 
 }
