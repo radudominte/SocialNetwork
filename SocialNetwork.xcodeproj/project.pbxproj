@@ -15,6 +15,7 @@
 		074E48781E3CBBDB00B07608 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 074E48771E3CBBDB00B07608 /* GoogleService-Info.plist */; };
 		075BB89B1E4730B700D08BB7 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075BB89A1E4730B700D08BB7 /* FeedVC.swift */; };
 		075BB89D1E477AAB00D08BB7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075BB89C1E477AAB00D08BB7 /* CircleView.swift */; };
+		075BB89F1E48499E00D08BB7 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075BB89E1E48499E00D08BB7 /* PostCell.swift */; };
 		076723A51E3E61DF000D14C0 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076723A41E3E61DF000D14C0 /* CustomView.swift */; };
 		076723A81E3E628C000D14C0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076723A71E3E628C000D14C0 /* Constants.swift */; };
 		076723AA1E3E6447000D14C0 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076723A91E3E6447000D14C0 /* RoundButton.swift */; };
@@ -34,6 +35,7 @@
 		074E48771E3CBBDB00B07608 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		075BB89A1E4730B700D08BB7 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		075BB89C1E477AAB00D08BB7 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		075BB89E1E48499E00D08BB7 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		076723A41E3E61DF000D14C0 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		076723A71E3E628C000D14C0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		076723A91E3E6447000D14C0 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				076723AB1E3E65C3000D14C0 /* CustomField.swift */,
 				076723AD1E3E66FA000D14C0 /* CustomButton.swift */,
 				075BB89C1E477AAB00D08BB7 /* CircleView.swift */,
+				075BB89E1E48499E00D08BB7 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				076723AE1E3E66FA000D14C0 /* CustomButton.swift in Sources */,
 				074E48661E3CB9FE00B07608 /* AppDelegate.swift in Sources */,
 				076723A81E3E628C000D14C0 /* Constants.swift in Sources */,
+				075BB89F1E48499E00D08BB7 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
