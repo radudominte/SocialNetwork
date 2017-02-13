@@ -18,7 +18,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
-
+    
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,8 +70,19 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
-            cell.configureCell(post: post)
-            return cell
+            if let image = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                
+                cell.configureCell(post: post, img: image)
+                return cell
+            }else{
+                
+                // the func declared in PostCell has 2 parameters the image parameter is set = to nil, in that case when you use that function and you
+                // do not have a value to pass to the image parameter you need to set just the first parameter like in the fun below, the image parameter
+                // can be erased and will be nil by default...  func configureCell(post: Post, img: UIImage? = nil) {
+                cell.configureCell(post: post)
+                return cell
+            }
+            
         }else{
             return PostCell()
         }
