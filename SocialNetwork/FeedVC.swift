@@ -16,10 +16,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var captionField: CustomField!
+    
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     
+    var imageSelected = false
+    
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +100,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             
             imageAdd.image = image
+            imageSelected = true
         }else{
             print("RADU: A valid image wasn't selected")
         }
@@ -109,6 +116,42 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    @IBAction func postButtonPressed(_ sender: Any) {
+        
+        guard let caption = captionField.text, caption != "" else {
+            
+            print("RADU: Cption must be entered")
+            return
+        }
+        
+        guard let img = imageAdd.image, imageSelected == true else {
+            
+            print("RADU: An image must be selected")
+            return
+        }
+        
+        if let imageData = UIImageJPEGRepresentation(img, 0.2) {
+            
+            //sets an unique ID string
+            let imgUid = NSUUID().uuidString
+            
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imageData, metadata: metadata) { (metadata, error) in
+             
+                if error != nil {
+                    
+                    print("RADU: Unable upload image to Firebase storage")
+                }else{
+                    
+                    print("RADU: Successfully uploaded image to Firebase storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString               
+                }
+            }
+        }
+    }
 
     
     @IBAction func signOutButton(_ sender: Any) {
