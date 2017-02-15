@@ -15,8 +15,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var captionField: CustomField!
+    
+    
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
@@ -40,6 +41,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                self.posts.removeAll()
                 
                 for snap in snapshot {
                     
@@ -79,16 +82,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             if let image = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 
                 cell.configureCell(post: post, img: image)
-                return cell
             }else{
                 
                 // the func declared in PostCell has 2 parameters the image parameter is set = to nil, in that case when you use that function and you
                 // do not have a value to pass to the image parameter you need to set just the first parameter like in the fun below, the image parameter
                 // can be erased and will be nil by default...  func configureCell(post: Post, img: UIImage? = nil) {
                 cell.configureCell(post: post)
-                return cell
             }
-            
+            return cell
         }else{
             return PostCell()
         }

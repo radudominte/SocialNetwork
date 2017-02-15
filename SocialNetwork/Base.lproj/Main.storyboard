@@ -309,6 +309,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="caption" destination="D4r-Km-NBq" id="Vlh-et-EBu"/>
+                                            <outlet property="likeImage" destination="vtb-37-c3I" id="QEI-x3-2rH"/>
                                             <outlet property="likesLabel" destination="bs4-XO-Y3K" id="Zem-it-hUT"/>
                                             <outlet property="postImage" destination="OnC-5q-3VV" id="Ewq-Uq-ibv"/>
                                             <outlet property="profileImage" destination="Tn6-Cf-fFc" id="16l-ma-lws"/>
